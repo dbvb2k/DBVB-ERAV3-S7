@@ -46,7 +46,8 @@ This repository contains various CNN model implementations for MNIST digit class
 - Good model, The gap between training and test accuracy is less (Epochs 3 to 8)
 - Model is overfitting slighly after the 9th epoch
 
-=====================================================================================================
+===========================================================================
+
 
 # Step 2
 
@@ -63,7 +64,7 @@ This repository contains various CNN model implementations for MNIST digit class
 - Good model, The gap between training and test accuracy is less
 - Training accuracy is 99.50% in the last epoch, model is slow in learning ?
 
-=====================================================================================================
+===========================================================================
 
 # Step 3
 
@@ -84,11 +85,12 @@ This repository contains various CNN model implementations for MNIST digit class
 - SGD Optimizer (99.44% best accuracy) gave a slightly better accuracy than Adam optimizer (99.38% best accuracy), remaining all parameters were being the same
 - Increased the capacity of the model by adding a layer after GAP!
 
+===========================================================================
 
 ## Training Details
 
 - **Optimizer**: SGD with momentum (0.9)
-- **Learning Rate**: 0.01 with ReduceLROnPlateau scheduling / StepLR 
+- **Learning Rate**: StepLR 
 - **Batch Size**: 128 (64 for CUDA)
 - **Epochs**: 15
 - **Data Augmentation**: Random rotation (-7° to 7°)
@@ -100,14 +102,6 @@ Training transforms include:
 - Random rotation (-7° to 7°)
 - Normalization
 - Optional ColorJitter (commented out)
-
-## Learning Rate Scheduling
-
-Uses ReduceLROnPlateau scheduler with:
-- Mode: max (tracking validation accuracy)
-- Factor: 0.1
-- Patience: 3 epochs
-- Minimum LR: 1e-6
 
 ## Usage
 
